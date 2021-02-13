@@ -10,6 +10,9 @@
 /[Ll]ogs/*
 /[Mm]emoryCaptures/*
 
+#wg. mnie to spowoduje o wiele mniej problemów
+ProjectSettings/ProjectVersion.txt
+
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
 
