@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Update() {
-        //musimy skąd pobrac informacje, jak gracz chce sie przesunąć
+        //musimy skądś pobrac informacje, jak gracz chce sie przesunąć
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
@@ -22,9 +22,10 @@ public class PlayerController : MonoBehaviour {
         velocity.y += gravity * Time.deltaTime;
         characterController.Move(velocity * Time.deltaTime);
 
-        //Vector3 move = (transform.right * x + transform.forward * z) * Time.deltaTime * speed;
-        //move.y = gravity * Time.deltaTime;
-
-        //characterController.Move(move);
+        //inny sposób na to samo
+        /* Vector3 move = (transform.right * x + transform.forward * z) * Time.deltaTime * speed;
+        move.y = gravity * Time.deltaTime;
+        characterController.Move(move);
+        */
     }
 }
