@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+    public static int StatycznaZmienna = 1;
     [SerializeField] private float speed = 12f;
     [SerializeField] private float gravity = -10f;
     private Vector3 velocity;
-    private float velocity2;
     private CharacterController characterController = null;
 
     private void Awake() {
@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Update() {
-        //musimy skądś pobrac informacje, jak gracz chce sie przesunąć
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
@@ -20,12 +19,18 @@ public class PlayerController : MonoBehaviour {
         characterController.Move(move * speed * Time.deltaTime);
 
         velocity.y += gravity * Time.deltaTime;
-        characterController.Move(velocity * Time.deltaTime);
+        characterController.Move(velocity);
 
         //inny sposób na to samo
         /* Vector3 move = (transform.right * x + transform.forward * z) * Time.deltaTime * speed;
         move.y = gravity * Time.deltaTime;
         characterController.Move(move);
         */
+
+        int liczba = InnaKlasa.JakasZmienna;
     }
+}
+
+public class InnaKlasa {
+    public static int JakasZmienna;
 }
