@@ -1,18 +1,11 @@
 ﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour {
-    public static GameManager gameManager { get; private set; }
     public int timeToEnd = 240;
-
     private bool gamePaused = false;
     private bool endGame = false;
     private bool win = false;
-
-    private void Awake() {
-        if (gameManager == null) {
-            gameManager = this;
-        }
-    }
+    public static GameManager gameManager { get; private set; }
 
     public void EndGame() {
         CancelInvoke("Stopper");
@@ -50,11 +43,17 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    void Start() {
+    private void Awake() {
+        if (gameManager == null) {
+            gameManager = this;
+        }
+    }
+
+    private void Start() {
         InvokeRepeating("Stopper", 1, 1);
     }
 
-    void Update() {
+    private void Update() {
         if (Input.GetKeyDown(KeyCode.P)) {
             if (gamePaused == true) {
                 ResumeGame();
