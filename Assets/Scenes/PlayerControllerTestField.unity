@@ -1203,7 +1203,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -1277,11 +1277,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2925565811185884582, guid: 426308c22814eb54fa467f0160d89f4f,
-        type: 3}
-      propertyPath: m_SlopeLimit
-      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 2925565811185884583, guid: 426308c22814eb54fa467f0160d89f4f,
         type: 3}
