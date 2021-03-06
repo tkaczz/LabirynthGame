@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: TeleportMaterialB
-  m_Shader: {fileID: 4800000, guid: dbfd815443657dc43b6e7ec08add97d8, type: 3}
+  m_Shader: {fileID: 4800000, guid: 41913c04139139144be49621f75fdcb2, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0

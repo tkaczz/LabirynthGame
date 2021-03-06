@@ -1,4 +1,4 @@
-﻿Shader "Unlit/ScreenCutoutShader"
+﻿Shader "Unlit/ScreenCutoutShader2"
 {
     Properties
     {

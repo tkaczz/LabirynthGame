@@ -23,12 +23,14 @@ public class PortalTeleport : MonoBehaviour {
 
             //sprawdzamy czy gracz jest wystarczająco blisko
             //jeśli będą w przeciwnych kierunkach to będzie ujemne
+            //sprawdzamy czy gracz podchodzi od przodu
             float dotProduct = Vector3.Dot(transform.up, portalToPlayer);
 
             if (dotProduct < 0f) {
                 //wyliczenie różnicy obrotu, tak by postać po wyjściu była ustawiona pod odpowiedniym kątem
-                float rotationDiff = Quaternion.Angle(transform.rotation, receiver.rotation);
-                rotationDiff += 180; player.Rotate(Vector3.up, rotationDiff);
+                float rotationDiff = -Quaternion.Angle(transform.rotation, receiver.rotation);
+                rotationDiff += 180;
+                player.Rotate(Vector3.up, rotationDiff);
 
                 //różnicy między pozycją gracza (w momencie wejścia)
                 Vector3 positionOffset = Quaternion.Euler(0f, rotationDiff, 0f) * portalToPlayer;
