@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour {
     private bool gamePaused = false;
     private bool endGame = false;
     private bool win = false;
+
     public static GameManager gameManager { get; private set; }
 
     public void EndGame() {
