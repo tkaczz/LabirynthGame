@@ -7,7 +7,14 @@
 public class PickUp : MonoBehaviour {
 
     public virtual void Pick() {
-        Debug.Log("Podniesiono");
         Destroy(this.gameObject);
+    }
+
+    private void Update() {
+        Rotate();
+    }
+
+    private void Rotate() {
+        transform.Rotate(0, 0, 1);
     }
 }

@@ -2,11 +2,45 @@
 
 public class GameManager : MonoBehaviour {
     public int timeToEnd = 240;
+
     private bool gamePaused = false;
     private bool endGame = false;
     private bool win = false;
 
+    private int greenKeys;
+    private int redKeys;
+    private int goldKeys;
+
+    private int points = 0;
+
     public static GameManager gameManager { get; private set; }
+
+    public void AddKey(Keys keyType) {
+        switch (keyType) {
+            case Keys.Green:
+                greenKeys++;
+                break;
+            case Keys.Red:
+                redKeys++;
+                break;
+            case Keys.Gold:
+                goldKeys++;
+                break;
+        }
+    }
+
+    public void AddPoints(int pointsToAdd) {
+        points += pointsToAdd;
+    }
+
+    public void FreezeTime(int freezeAmount) {
+        CancelInvoke("Stopper");
+        InvokeRepeating("Stopper", freezeAmount, 1);
+    }
+
+    public void AddTime(int timeToAdd) {
+        timeToEnd += timeToAdd;
+    }
 
     public void EndGame() {
         CancelInvoke("Stopper");
