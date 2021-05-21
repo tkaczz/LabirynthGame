@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.13296545, g: 0.19145328, b: 0.33962262, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 81f714daf7144784b8a2f42f1cd30927, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.1815468, g: 0.22718975, b: 0.3074059, a: 1}
+  m_IndirectSpecularColor: {r: 0.043940824, g: 0.045202818, b: 0.059908833, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3109,66 +3109,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1715830423}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1715981389
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1715981391}
-  - component: {fileID: 1715981390}
-  m_Layer: 0
-  m_Name: Labirynth
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1715981390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1715981389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e14369eb0f4a7fc419f3201df5020426, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  map: {fileID: 2800000, guid: 859d33c47e7c8254eba986b5cd68152e, type: 3}
-  colorMappings:
-  - color: {r: 1, g: 0, b: 0, a: 0}
-    prefab: {fileID: 6880220256340675333, guid: 4df3f72f2a509bb46a2b699c053a21f9,
-      type: 3}
-  - color: {r: 0, g: 1, b: 0, a: 0}
-    prefab: {fileID: 4029756647508302566, guid: 53052756a26e5424ea295855b3631c6d,
-      type: 3}
-  - color: {r: 1, g: 1, b: 0, a: 0}
-    prefab: {fileID: 6284981955740221046, guid: 9a498cb467bc56a428395e5dd4ed16ad,
-      type: 3}
-  - color: {r: 0, g: 0, b: 0, a: 0}
-    prefab: {fileID: 3687344485049887873, guid: f019de9acdd789b4db68bfbbd7ed466c,
-      type: 3}
-  offset: 5
-  material01: {fileID: 0}
-  material02: {fileID: 0}
---- !u!4 &1715981391
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1715981389}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.5, y: 0.8850726, z: 14.12}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1722595161
 GameObject:
   m_ObjectHideFlags: 0
@@ -4508,13 +4448,13 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 5.5553863e-34, y: 7.1e-44, z: 0, w: -2.3186194e+10}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -4611,6 +4551,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52d0bfedd0f0b644b996c34032df9aac, type: 3}
+--- !u!1001 &1582893932589686426
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1582893933231788757, guid: f170d6814c7b35344ada4ec08c557615,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582893933231788757, guid: f170d6814c7b35344ada4ec08c557615,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 50.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582893933231788757, guid: f170d6814c7b35344ada4ec08c557615,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582893933231788757, guid: f170d6814c7b35344ada4ec08c557615,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582893933231788757, guid: f170d6814c7b35344ada4ec08c557615,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582893933231788757, guid: f170d6814c7b35344ada4ec08c557615,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582893933231788757, guid: f170d6814c7b35344ada4ec08c557615,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582893933231788757, guid: f170d6814c7b35344ada4ec08c557615,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582893933231788757, guid: f170d6814c7b35344ada4ec08c557615,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582893933231788757, guid: f170d6814c7b35344ada4ec08c557615,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582893933231788757, guid: f170d6814c7b35344ada4ec08c557615,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1582893933231788759, guid: f170d6814c7b35344ada4ec08c557615,
+        type: 3}
+      propertyPath: m_Name
+      value: Labirynth
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f170d6814c7b35344ada4ec08c557615, type: 3}
 --- !u!1001 &2925565809711842665
 PrefabInstance:
   m_ObjectHideFlags: 0
