@@ -1,16 +1,28 @@
 ﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour {
+	[Header("Gameplay")]
 	public int timeToEnd = 240;
 
+	[Header("Keys")]
 	public int greenKeys;
 	public int redKeys;
 	public int goldKeys;
+
+	[Header("Audio")]
+	public AudioClip resumeClip;
+	public AudioClip pauseClip;
+	public AudioClip winClip;
+	public AudioClip loseClip;
+
+	public MusicScript MusicScript;
 
 	private bool gamePaused = false;
 	private bool endGame = false;
 	private bool win = false;
 	private int points = 0;
+
+	private AudioSource audioSource;
 
 	public static GameManager gameManager { get; private set; }
 
@@ -52,12 +64,16 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void PauseGame() {
+		PlayClipShort(pauseClip);
+		MusicScript.OnPauseGame();
 		Debug.Log("Game paused");
 		gamePaused = true;
 		Time.timeScale = 0f;
 	}
 
 	public void ResumeGame() {
+		PlayClipShort(resumeClip);
+		MusicScript.OnResumeGame();
 		Debug.Log("Game resumed");
 		gamePaused = false;
 		Time.timeScale = 1.0f;
@@ -77,10 +93,16 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	public void PlayClipShort(AudioClip playClip) {
+		audioSource.PlayOneShot(playClip);
+	}
+
 	private void Awake() {
 		if (gameManager == null) {
 			gameManager = this;
 		}
+
+		audioSource = GetComponent<AudioSource>();
 	}
 
 	private void Start() {

@@ -5,16 +5,18 @@
 ///<para>Umożliwi to też nadpisywanie/dołożenie funkcjonalności dla funkcji Pick</para>
 /// </summary>
 public class PickUp : MonoBehaviour {
+	public AudioClip audioClip;
 
-    public virtual void Pick() {
-        Destroy(this.gameObject);
-    }
+	public virtual void Pick() {
+		GameManager.gameManager.PlayClipShort(audioClip);
+		Destroy(this.gameObject);
+	}
 
-    private void Update() {
-        Rotate();
-    }
+	private void Update() {
+		Rotate();
+	}
 
-    private void Rotate() {
-        transform.Rotate(0, 0, 1);
-    }
+	private void Rotate() {
+		transform.Rotate(0, 0, 1);
+	}
 }
