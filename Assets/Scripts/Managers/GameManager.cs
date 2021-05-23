@@ -94,6 +94,9 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void PlayClipShort(AudioClip playClip) {
+		//jeśli nie ma klipu do odtworzenia, to tego nie robimy
+		if (playClip == null) { return; }
+
 		audioSource.PlayOneShot(playClip);
 	}
 

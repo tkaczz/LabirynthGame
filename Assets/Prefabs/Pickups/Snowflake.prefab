@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7026410234008032336}
   - component: {fileID: 6209629855474572277}
   - component: {fileID: 8199364138580324159}
+  - component: {fileID: 5237059690861499386}
   m_Layer: 0
   m_Name: Snowflake
   m_TagString: Untagged
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &5237059690861499386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7694683971405713130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72c2cc6aa986e7b4fae4e66747dd8468, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 0}
+  freezeAmount: 5
