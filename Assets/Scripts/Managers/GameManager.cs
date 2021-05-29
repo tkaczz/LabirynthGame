@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 	[Header("Gameplay")]
@@ -14,8 +16,20 @@ public class GameManager : MonoBehaviour {
 	public AudioClip pauseClip;
 	public AudioClip winClip;
 	public AudioClip loseClip;
-
 	public MusicScript MusicScript;
+
+	[Header("UI")]
+	public Text timeText;
+	public Text goldKeyText;
+	public Text redKeyText;
+	public Text greenKeyText;
+	public Text crystalText;
+	public Image snowFlake;
+
+	public GameObject infoPanel;
+	public Text pauseEnd;
+	public Text reloadInfo;
+	public Text useInfo;
 
 	private bool gamePaused = false;
 	private bool endGame = false;
@@ -30,27 +44,33 @@ public class GameManager : MonoBehaviour {
 		switch (keyType) {
 			case Keys.Green:
 				greenKeys++;
+				greenKeyText.text = greenKeys.ToString();
 				break;
 			case Keys.Red:
 				redKeys++;
+				redKeyText.text = redKeys.ToString();
 				break;
 			case Keys.Gold:
 				goldKeys++;
+				goldKeyText.text = goldKeys.ToString();
 				break;
 		}
 	}
 
 	public void AddPoints(int pointsToAdd) {
 		points += pointsToAdd;
+		crystalText.text = points.ToString();
 	}
 
 	public void FreezeTime(int freezeAmount) {
 		CancelInvoke("Stopper");
+		snowFlake.enabled = true;
 		InvokeRepeating("Stopper", freezeAmount, 1);
 	}
 
 	public void AddTime(int timeToAdd) {
 		timeToEnd += timeToAdd;
+		timeText.text = timeToEnd.ToString();
 	}
 
 	public void EndGame() {
@@ -100,6 +120,11 @@ public class GameManager : MonoBehaviour {
 		audioSource.PlayOneShot(playClip);
 	}
 
+	public void WinGame() {
+		win = true;
+		endGame = true;
+	}
+
 	private void Awake() {
 		if (gameManager == null) {
 			gameManager = this;
@@ -108,7 +133,18 @@ public class GameManager : MonoBehaviour {
 		audioSource = GetComponent<AudioSource>();
 	}
 
+	private void SetUseInfo(string info) {
+		useInfo.text = info;
+	}
+
 	private void Start() {
+		snowFlake.enabled = false;
+		timeText.text = timeToEnd.ToString();
+		pauseEnd.text = "Pause";
+		reloadInfo.text = string.Empty;
+
+		SetUseInfo(string.Empty);
+		audioSource = GetComponent<AudioSource>();
 		InvokeRepeating("Stopper", 1, 1);
 	}
 
@@ -119,6 +155,15 @@ public class GameManager : MonoBehaviour {
 			}
 			else {
 				PauseGame();
+			}
+		}
+
+		if (endGame) {
+			if (Input.GetKeyDown(KeyCode.Y)) {
+				SceneManager.LoadScene(0);
+			}
+			if (Input.GetKeyDown(KeyCode.N)) {
+				Application.Quit();
 			}
 		}
 	}
