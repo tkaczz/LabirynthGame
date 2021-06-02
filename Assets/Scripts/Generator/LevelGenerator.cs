@@ -47,4 +47,19 @@ public class LevelGenerator : MonoBehaviour {
 
 		ColorTheChildren();
 	}
+
+	//tutaj idziemy od tyłu
+	//czyli zaczynamy od elementu np. 200
+	//potem 199, 198
+	//musimy tak zrobić bo jeśli byśmy to robili od przodu to
+	//moglibyśmy np. usuwac rodzica, a potem próbować usunąć jego dzieci
+	//przez co unity nam zwróci błąd
+	public void RemoveLabirynth() {
+		int count = transform.childCount;
+
+		for (int i = count - 1; i >= 0; i--) {
+			//var current = transform.GetChild(i); //możecie odkomentować i obserwować w debuggerze
+			DestroyImmediate(transform.GetChild(i).gameObject);
+		}
+	}
 }

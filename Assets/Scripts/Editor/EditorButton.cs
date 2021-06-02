@@ -12,5 +12,9 @@ public class EditorButton : Editor {
 		if (GUILayout.Button("Create labirynth")) {
 			generator.GenerateLabirynth();
 		}
+
+		if (GUILayout.Button("Remove labirynth")) {
+			generator.RemoveLabirynth();
+		}
 	}
 }
